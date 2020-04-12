@@ -1,0 +1,33 @@
+<div class="edit-box">
+<h2>Editing Book</h2>
+
+	<% if @book.errors.any? %>
+	<div class="aler alert-warning">
+	<h5> <%= @book.errors.count %>errors prohibited this book from being saved </h5>
+	<ul>
+		<% @book.errors.full_messages.each do |message| %>
+		<li> <%= message %> </li>
+		<% end %>
+	</ul>
+	</div>
+	<% end %>
+	
+	<%= form_for(@book) do |f| %>
+	<div class="edit-text">
+	<p>Title</p>
+	<%= f.text_field :title %>
+	<p>Body</p>
+	<%= f.text_area :body %>
+	<br> <%= f.submit "Update Book" %>
+	</div>
+	<% end %>
+
+<div class="move">
+<div class="show">
+	<%= link_to "Show", book_path %>
+</div>
+<div class="back">
+	<%= link_to "back", books_path %>
+</div>
+</div>
+</div>

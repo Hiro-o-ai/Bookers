@@ -1,0 +1,17 @@
+<p class="message"><%= notice %></p>
+<div class ="detail-box">
+	<br>
+	<p>Title: <%= @book.title %></p>
+	<br>
+	<p>Body:<%= @book.body %></p>
+	<br>
+</div>
+
+<div class="move-box">
+	<div class="edit">
+		<%= link_to "Edit", edit_book_path(@book) %>
+	</div>
+	<div class="back">
+		<%= link_to "back", books_path %>
+	</div>
+</div>
